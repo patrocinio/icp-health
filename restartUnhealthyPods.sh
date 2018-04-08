@@ -2,8 +2,9 @@ echo Checking health of Pods
 
 FILE=/tmp/gp
 UNHEALTHY=/tmp/unhealthy
+alias k="kubectl -s localhost:8888"
 
-kubectl -s localhost:8888 get pods --all-namespaces > $FILE
+k get pods --all-namespaces > $FILE
 
 COUNT=$(wc -l $FILE)
 
@@ -17,7 +18,7 @@ while read -r pod
 do
 	POD_NAME=$(echo $pod | awk '{print $2}')
 	echo Restarting $POD_NAME
-	kubectl delete po $POD_NAME
+	k delete pod $POD_NAME
 done < $UNHEALTHY
 
 
