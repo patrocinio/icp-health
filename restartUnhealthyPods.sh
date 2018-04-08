@@ -2,9 +2,9 @@ echo Checking health of Pods
 
 FILE=/tmp/gp
 UNHEALTHY=/tmp/unhealthy
-k="kubectl -s localhost:8888"
+k="kubectl -s localhost:8888 -n kube-system"
 
-$k get pods --all-namespaces > $FILE
+$k get pods > $FILE
 
 COUNT=$(wc -l $FILE)
 
