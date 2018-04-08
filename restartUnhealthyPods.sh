@@ -16,7 +16,7 @@ grep -v Running $FILE | tail +2 | tee $UNHEALTHY
 
 while read -r pod
 do
-	POD_NAME=$(echo $pod | awk '{print $2}')
+	POD_NAME=$(echo $pod | awk '{print $1}')
 	echo Restarting $POD_NAME
 	$k delete pod $POD_NAME
 done < $UNHEALTHY
