@@ -11,7 +11,7 @@ echo === Number of Pods: $COUNT
 
 echo === Pods that are not in Running state
 
-grep -v Running $FILE | tee $UNHEALTHY
+grep -v Running $FILE | tail +2 | tee $UNHEALTHY
 
 while read -r pod
 do
