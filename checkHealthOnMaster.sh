@@ -2,7 +2,7 @@ echo Checking health of Pods
 
 FILE=/tmp/gp
 
-#kubectl get pods --all-namespaces > $FILE
+kubectl -s localhost:8888 get pods --all-namespaces > $FILE
 
 COUNT=$(wc -l $FILE)
 
