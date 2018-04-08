@@ -15,7 +15,7 @@ grep -v Running $FILE | tee $UNHEALTHY
 
 while read -r pod
 do
-	echo $pod
+	echo $pod | awk '{print $2}'
 done < $UNHEALTHY
 
 
