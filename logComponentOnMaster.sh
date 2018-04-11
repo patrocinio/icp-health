@@ -1,15 +1,14 @@
-
-
-PODS=$(kubectl get po | grep $1 | awk '{print $1}')
+k="kubectl -s localhost:8888 -n kube-system"
+PODS=$($k po | grep $1 | awk '{print $1}')
 echo Found $PODS
 
 for p in $PODS
 do
 	echo Pod: $p
-	while [ "$(kubectl get po $p | grep -v NAME | awk '{print $3}')" == "ContainerCreating" ]
+	while [ "$($k get po $p | grep -v NAME | awk '{print $3}')" == "ContainerCreating" ]
 	do
 		sleep 1
 	done
 
-	kubectl logs -f $p | tee /tmp/$p &
+	$kß logs -f $p | tee /tmp/$p &
 done
