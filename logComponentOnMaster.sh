@@ -10,5 +10,5 @@ do
 		sleep 1
 	done
 
-	$kß logs -f $p | tee /tmp/$p &
+	$k logs -f $p | tee /tmp/$p &
 done
