@@ -1,5 +1,5 @@
 k="kubectl -s localhost:8888 -n kube-system"
-PODS=$($k po | grep $1 | awk '{print $1}')
+PODS=$($k get po | grep $1 | awk '{print $1}')
 echo Found $PODS
 
 for p in $PODS
