@@ -1,3 +1,3 @@
-./etcd.sh
+. ./etcd.sh
 
 etcdctl2 cluster-helath
