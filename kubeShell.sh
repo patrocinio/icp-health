@@ -1,0 +1,3 @@
+echo Starting a shell in the current Kubernetes namespace...
+
+kubectl run my-shell --rm -i --tty --image ubuntu -- bash
