@@ -52,9 +52,15 @@ function uiStatus {
 	echo UI status: $status
 }
 
+function checkCloudant {
+	echo == Checking Cloudant status
+	kubectl logs icp-ds-0 | tail -10
+}
+
 checkNodes
 obtainPods
 numberOfPods
 podsNotRunning
 restartedPods
 uiStatus
+checkCloudant
