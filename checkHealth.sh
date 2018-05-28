@@ -1,5 +1,10 @@
 FILE=/tmp/gp
 
+function checkNodes {
+	echo === Checking nodes that are not ready
+	kubectl get nodes --no-headers=true | grep -v -w Ready
+}
+
 function obtainPods {
 	echo === Checking health of Pods
 
@@ -47,7 +52,7 @@ function uiStatus {
 	echo UI status: $status
 }
 
-
+checkNodes
 obtainPods
 numberOfPods
 podsNotRunning
