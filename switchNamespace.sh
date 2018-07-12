@@ -1,14 +1,13 @@
 # ICP
-CONTEXT=mycluster.icp-context
-USER=admin
+#USER=admin
+#USER=icpadmin
 
 # minikube
-#CONTEXT=minikube
 #USER=minikube
 
 NAMESPACE=$1
 
-kubectl config set-context $CONTEXT --user=$USER --namespace=$NAMESPACE
+kubectl config set-context $(kubectl config current-context) --namespace=$NAMESPACE
 
 echo Namespace set to $NAMESPACE
 
