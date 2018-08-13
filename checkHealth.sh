@@ -52,9 +52,15 @@ function uiStatus {
 	echo UI status: $status
 }
 
+function topNodes {
+	echo === Resource utilization
+	kubectl top nodes
+}
+
 checkNodes
 obtainPods
 numberOfPods
 podsNotRunning
 restartedPods
 uiStatus
+topNodes
