@@ -55,7 +55,7 @@ function uiStatus {
 function topNodes {
 	echo === Resource utilization
 	kubectl top nodes
-}
+} 
 
 checkNodes
 obtainPods
