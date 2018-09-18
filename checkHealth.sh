@@ -40,7 +40,7 @@ function restartedPods {
 function getMasterIP {
 	kubectl get nodes -o json | \
 	jq '.items[].metadata | select (.labels.role == "master") | .name' \
-	| tr -d '"'
+	| tr -d '"' | awk '{print $1}'
 }
 
 function uiStatus {
