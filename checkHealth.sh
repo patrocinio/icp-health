@@ -46,6 +46,7 @@ function getMasterIP {
 function uiStatus {
 	echo === Checking health of the UI
 	ip=$(getMasterIP)
+	echo Master IP: $ip
 	status=$(curl -s -o /dev/null --insecure -I -w "%{http_code}" \
 		https://$ip:8443/console/welcome)
 
