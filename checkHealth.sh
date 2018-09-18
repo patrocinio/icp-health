@@ -21,7 +21,7 @@ function numberOfPods {
 function podsNotRunning {
 	echo === Pods that are not in Running state
 
-	grep -v Running -v Completed $FILE
+	grep -v Running $FILE | grep -v Completed
 }
 
 function restartedPods {
