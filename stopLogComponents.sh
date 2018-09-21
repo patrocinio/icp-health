@@ -1,1 +1,0 @@
-kill `ps -aux | grep kubectl | grep logs | grep -v grep | awk '{print $2}'`
