@@ -3,5 +3,7 @@
 
 : "${ICP_ENVIRONMENT:=/opt/ibm/cluster}"
 
-ansible $1 -i $CLUSTER_DIR/hosts -e @$CLUSTER_DIR/config.yaml --private-key=$CLUSTER_DIR/ssh_key -a "$2" ${@:3
+export ANSIBLE_HOST_KEY_CHECKING=False
+
+ansible $1 -i $ICP_ENVIRONMENT/hosts -e @$ICP_ENVIRONMENT/config.yaml --private-key=$ICP_ENVIRONMENT/ssh_key -a "$2" ${@:3
 :99}
