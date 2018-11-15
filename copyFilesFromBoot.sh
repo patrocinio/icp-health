@@ -1,3 +1,5 @@
+: "${ICP_ENVIRONMENT:=/opt/ibm-cloud-private-3.1.0/cluster}"
+
 USER=$1
 BOOT=$2
 CLUSTER_DIR=$3
