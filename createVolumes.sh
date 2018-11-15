@@ -17,6 +17,7 @@ function create_pv () {
    		sed s/FILE_SYSTEM/d-${i}/g > $TEMP_FILE
 
    		cat $TEMP_FILE
+         echo
    		kubectl create -f /tmp/volume.yaml
 	done
 }
