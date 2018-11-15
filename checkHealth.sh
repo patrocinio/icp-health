@@ -68,6 +68,6 @@ obtainPods
 numberOfPods
 podsNotRunning
 restartedPods
-instalJq
+installJq
 uiStatus
 topNodes
