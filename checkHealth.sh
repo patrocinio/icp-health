@@ -43,6 +43,11 @@ function getMasterIP {
 	| tr -d '"' | head -1
 }
 
+function installJq {
+	echo Installing jq...
+	sudo apt-get install -y jq
+}
+
 function uiStatus {
 	echo === Checking health of the UI
 	ip=$(getMasterIP)
@@ -63,5 +68,6 @@ obtainPods
 numberOfPods
 podsNotRunning
 restartedPods
+instalJq
 uiStatus
 topNodes
