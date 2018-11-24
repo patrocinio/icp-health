@@ -10,7 +10,7 @@ do
 		echo Skipping $h
 	else
 		echo Copying to $h
-		scp $SOURCE root@$h/$DEST
+		scp $SOURCE root@$h:$DEST
 	fi
 
 done
