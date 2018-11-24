@@ -5,5 +5,10 @@ DEST=$2
 echo Copying file $SOURCE to $DEST
 for h in `cat $ICP_ENVIRONMENT/hosts`
 do
-	echo Copying to $h
+	if [[ $h =~ "[" ]]
+	then
+		echo Skipping $h
+	else
+		echo Copying to $h
+	fi
 done
