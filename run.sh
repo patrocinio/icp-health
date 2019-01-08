@@ -1,7 +1,7 @@
 # $1 host-pattern
 # $2 command
 
-: "${ICP_ENVIRONMENT:=/opt/ibm-cloud-private-3.1.0/cluster}"
+: "${ICP_ENVIRONMENT:=/opt/icp-3.1.1/cluster}"
 
 export ANSIBLE_HOST_KEY_CHECKING=False
 
