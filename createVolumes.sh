@@ -1,5 +1,5 @@
 FILE_SERVER=$1
-FILE_PATH=/pvs
+FILE_PATH=/storage
 
 TEMP_FILE=/tmp/volume.yaml
 
